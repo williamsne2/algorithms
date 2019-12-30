@@ -1,17 +1,25 @@
 def linear_regression(X, Y):
-	pass
+	alpha = cov(X, Y)/(variance(X))
+	beta = corr(X, Y)*std(Y)/std(X)
+	Y_pred = []
+	for i in range(0, len(Y)):
+		Y_pred[i] = alpha + beta*X[i]
+	return Y_pred
 
 def mean(Z):
 	return sum(Z)/len(Z)
 
 def std(Z):
+	return math.sqrt(variance(Z))
+
+def variance(Z):
 	import math
 	err = 0
 	z_bar = mean(Z)
 	N = len(Z)
 	for i in range(0, N):
 		err += (Z[i] - z_bar)**2
-	return math.sqrt(err/(N-1))
+	return err/(N-1)
 
 def cov(X, Y):
 	X_bar = mean(X)

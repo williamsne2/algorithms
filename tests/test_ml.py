@@ -6,6 +6,7 @@ from algorithms.ml.nearest_neighbor import (
 from algorithms.ml.linear_regression import (
     mean,
     std,
+    variance,
     cov,
     corr,
     linear_regression,
@@ -41,10 +42,19 @@ class TestML(unittest.TestCase):
         Y = [-6, 1, -2, 4, -1, 0, 0, 5, -1, 7, 10]
         self.assertEqual(mean(X), 0)
         self.assertAlmostEqual(mean(Y), 1.5455, 4)
+        self.assertAlmostEqual(variance(Y), 11, 2)
         self.assertAlmostEqual(std(X), 3.3166, 4)
         self.assertAlmostEqual(cov(X, Y), 11.00, 2)
         self.assertAlmostEqual(corr(X, Y), 0.7295, 4)
         self.assertAlmostEqual(r_2(X, Y), 0.5321, 4)
+
+    def test_linear_reg(self):
+        X = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+        Y = [-6, 1, -2, 4, -1, 0, 0, 5, -1, 7, 10]
+        Y_hat = []
+        for i in range(0, len(Y)):
+            Y_hat[i] = X[i]+1.54545
+        self.assertAlmostEqual(linear_regression(X, Y), Y_hat[i], 3)
         
 if __name__ == "__main__":
     unittest.main()
