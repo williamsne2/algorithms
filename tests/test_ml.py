@@ -61,7 +61,7 @@ class TestML(unittest.TestCase):
             err += Y_pred[i]-Y_hat[i]
         self.assertAlmostEqual(alpha(X, Y), 1.545454, 4)
         self.assertAlmostEqual(beta(X, Y), 1.0000, 2)
-        #self.assertAlmostEqual(err, 0, 2)
+        self.assertAlmostEqual(err, 0, 2)
         
 if __name__ == "__main__":
     unittest.main()
