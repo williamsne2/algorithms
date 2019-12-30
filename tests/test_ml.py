@@ -59,7 +59,7 @@ class TestML(unittest.TestCase):
         for i in range(0, len(X)):
             Y_hat.append(X[i]+1.54545)
             err += Y_pred[i]-Y_hat[i]
-        self.assertAlmostEqual(alpha(X, Y), 1.5454, 4)
+        self.assertAlmostEqual(alpha(X, Y), 1.545454, 4)
         self.assertAlmostEqual(beta(X, Y), 1.0000, 2)
         #self.assertAlmostEqual(err, 0, 2)
         
