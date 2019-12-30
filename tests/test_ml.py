@@ -51,10 +51,13 @@ class TestML(unittest.TestCase):
     def test_linear_reg(self):
         X = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
         Y = [-6, 1, -2, 4, -1, 0, 0, 5, -1, 7, 10]
+        Y_pred = linear_regression(X, Y)
         Y_hat = []
+        err = 0
         for i in range(0, len(X)):
             Y_hat.append(X[i]+1.54545)
-        self.assertAlmostEqual(linear_regression(X, Y), Y_hat, 3)
+            err += Y_pred[i]-Y_hat[i]
+        self.assertAlmostEqual(err, 0, 2)
         
 if __name__ == "__main__":
     unittest.main()
