@@ -1,10 +1,15 @@
 def linear_regression(X, Y):
-	alpha = cov(X, Y)/(variance(X))
-	beta = corr(X, Y)*std(Y)/std(X)
+	alpha_ = alpha(X, Y)
+	beta_ = beta(X, Y)
 	Y_pred = []
 	for i in range(0, len(Y)):
-		Y_pred.append(alpha + beta*X[i])
+		Y_pred.append(alpha_ + beta_*X[i])
 	return Y_pred
+
+def alpha(X, Y):
+	return cov(X, Y)/(variance(X))
+def beta(X, Y):
+	return corr(X, Y)*std(Y)/std(X)
 
 def mean(Z):
 	return sum(Z)/len(Z)
