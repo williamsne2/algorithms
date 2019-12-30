@@ -14,9 +14,12 @@ def std(Z):
 	return math.sqrt(err/(N-1))
 
 def cov(X, Y):
-	X_hat = X-mean(X)
-	Y_hat = Y-mean(Y)
+	X_hat = []
+	Y_hat = []
 	N = min([len(X_hat), len(Y_hat)])
+	for i in range(0, N):
+		X_hat[i] = X[i]-mean(X)
+		Y_hat[i] = Y[i]-mean(Y)
 	cov = 0
 	for i in range(0, N):
 		cov += X_hat[i]*Y_hat[i]
