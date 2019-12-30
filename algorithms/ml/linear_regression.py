@@ -9,7 +9,7 @@ def std(Z):
 	err = 0
 	z_bar = mean(Z)
 	N = len(Z)
-	for i in range(1, N):
+	for i in range(0, N):
 		err += (Z[i] - z_bar)**2
 	return math.sqrt(err/(N-1))
 
@@ -18,7 +18,7 @@ def cov(X, Y):
 	Y_hat = Y-mean(Y)
 	N = min([len(X_hat), len(Y_hat)])
 	cov = 0
-	for i in range(1, N):
+	for i in range(0, N):
 		cov += X_hat[i]*Y_hat[i]
 	return cov/(N-1)
 
