@@ -10,10 +10,10 @@ def mean(Z):
 	return sum(Z)/len(Z)
 
 def std(Z):
+	import math
 	return math.sqrt(variance(Z))
 
 def variance(Z):
-	import math
 	err = 0
 	z_bar = mean(Z)
 	N = len(Z)
