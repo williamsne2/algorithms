@@ -3,7 +3,7 @@ def linear_regression(X, Y):
 	beta = corr(X, Y)*std(Y)/std(X)
 	Y_pred = []
 	for i in range(0, len(Y)):
-		Y_pred[i] = alpha + beta*X[i]
+		Y_pred.append(alpha + beta*X[i])
 	return Y_pred
 
 def mean(Z):
