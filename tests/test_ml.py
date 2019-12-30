@@ -33,8 +33,10 @@ class TestML(unittest.TestCase):
         self.assertAlmostEqual(distance((1,2,3), (1,0,-1)), 4.47, 2)
 
     def test_derivative(self):
-        X_test = range(1, 10000)
-        Y_square = pow(X_test,2)
+        import numpy as np
+
+        X_test = np.arange(1, 10000)
+        Y_square = X_test**2
         self.assertEqual(derivative(X_test, Y_square), 2*X_test)
         
 if __name__ == "__main__":
