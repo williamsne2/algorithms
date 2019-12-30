@@ -44,7 +44,7 @@ class TestML(unittest.TestCase):
         self.assertAlmostEqual(std(X), 3.3166, 4)
         self.assertAlmostEqual(cov(X, Y), 11.00, 2)
         self.assertAlmostEqual(corr(X, Y), 0.7295, 4)
-        self.assertAlmostEqual(r_2(X, Y), 0.5322, 4)
+        self.assertAlmostEqual(r_2(X, Y), 0.5321, 4)
         
 if __name__ == "__main__":
     unittest.main()
