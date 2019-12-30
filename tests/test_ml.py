@@ -34,7 +34,7 @@ class TestML(unittest.TestCase):
 
     def test_derivative(self):
         X_test = range(1, 10000)
-        Y_square = X_test**2
+        Y_square = pow(X_test,2)
         self.assertEqual(derivative(X_test, Y_square), 2*X_test)
         
 if __name__ == "__main__":
