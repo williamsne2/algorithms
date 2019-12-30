@@ -6,9 +6,9 @@ def linear_regression(X, Y):
 		Y_pred.append(alpha_ + beta_*X[i])
 	return Y_pred
 
-def alpha(X, Y):
-	return cov(X, Y)/(variance(X))
 def beta(X, Y):
+	return cov(X, Y)/(variance(X))
+def alpha(X, Y):
 	return corr(X, Y)*std(Y)/std(X)
 
 def mean(Z):
