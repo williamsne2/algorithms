@@ -9,7 +9,7 @@ def linear_regression(X, Y):
 def beta(X, Y):
 	return cov(X, Y)/(variance(X))
 def alpha(X, Y):
-	return corr(X, Y)*std(Y)/std(X)
+	return mean(Y) - beta(X, Y)*mean(X)
 
 def mean(Z):
 	return sum(Z)/len(Z)
