@@ -42,7 +42,7 @@ class TestML(unittest.TestCase):
         Y = [-6, 1, -2, 4, -1, 0, 0, 5, -1, 7, 10]
         self.assertEqual(mean(X), 0)
         self.assertAlmostEqual(mean(Y), 1.5455, 4)
-        self.assertAlmostEqual(variance(Y), 11, 2)
+        self.assertAlmostEqual(variance(Y), 20.6727, 4)
         self.assertAlmostEqual(std(X), 3.3166, 4)
         self.assertAlmostEqual(cov(X, Y), 11.00, 2)
         self.assertAlmostEqual(corr(X, Y), 0.7295, 4)
