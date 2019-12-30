@@ -5,4 +5,3 @@ nose
 pytest
 tox
 black
-numpy

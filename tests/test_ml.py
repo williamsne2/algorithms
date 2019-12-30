@@ -4,8 +4,12 @@ from algorithms.ml.nearest_neighbor import (
 )
 
 from algorithms.ml.linear_regression import (
-    derivative,
-    linear_regression
+    mean,
+    std,
+    cov,
+    corr,
+    linear_regression,
+    r_2
 )
 
 import unittest
@@ -32,12 +36,15 @@ class TestML(unittest.TestCase):
     def test_distance(self):
         self.assertAlmostEqual(distance((1,2,3), (1,0,-1)), 4.47, 2)
 
-    def test_derivative(self):
-        import numpy
-
-        X_test = numpy.arange(1, 10000)
-        Y_square = X_test**2
-        self.assertEqual(derivative(X_test, Y_square), 2*X_test)
+    def test_coeffs(self):
+        X = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+        Y = [-6, 1, -2, 4, -1, 0, 0, 5, -1, 7, 10]
+        self.assertEqual(mean(X), 0)
+        self.assertAlmostEqual(mean(Y), 1.5455, 4)
+        self.assertAlmostEqual(std(X), 3.3166, 4)
+        self.assertAlmostEqual(cov(X, Y), 11.00, 2)
+        self.assertAlmostEqual(corr(X, Y), 0.7295, 4)
+        self.assertAlmostEqual(r_2(X, Y), 0.5322, 4)
         
 if __name__ == "__main__":
     unittest.main()
