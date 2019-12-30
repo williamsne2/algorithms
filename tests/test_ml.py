@@ -10,7 +10,9 @@ from algorithms.ml.linear_regression import (
     cov,
     corr,
     linear_regression,
-    r_2
+    r_2,
+    alpha,
+    beta
 )
 
 import unittest
