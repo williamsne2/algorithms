@@ -1,5 +1,6 @@
+
 def linear_regression(X, Y):
-    alpha_ = alpha(X, Y)
+	alpha_ = alpha(X, Y)
     beta_ = beta(X, Y)
     Y_pred = []
     
