@@ -43,6 +43,7 @@ class TestML(unittest.TestCase):
         X = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
         Y = [-6, 1, -2, 4, -1, 0, 0, 5, -1, 7, 10]
         Z = [[1, 2, 3], [3, 2, 4], [-2, 10, 4]]
+        Y_2 = [0, -5, 3]
         self.assertEqual(mean(Z), [2, 3, 4])
         self.assertEqual(mean(X), 0)
         self.assertAlmostEqual(mean(Y), 1.5455, 4)
@@ -56,6 +57,8 @@ class TestML(unittest.TestCase):
         X = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
         Y = [-6, 1, -2, 4, -1, 0, 0, 5, -1, 7, 10]
         Y_pred = linear_regression(X, Y)
+        X_1 = [[-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5], [-5, -4, -2, -2, -1, 10, 1, 4, 3, 4, 5]]
+        Y_pred_1 = linear_regression(X_1, Y)
         Y_hat = []
         err = 0
         for i in range(0, len(X)):
