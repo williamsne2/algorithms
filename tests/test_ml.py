@@ -39,9 +39,11 @@ class TestML(unittest.TestCase):
     def test_distance(self):
         self.assertAlmostEqual(distance((1,2,3), (1,0,-1)), 4.47, 2)
 
-    def test_coeffs(self):
+    def test_measures(self):
         X = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
         Y = [-6, 1, -2, 4, -1, 0, 0, 5, -1, 7, 10]
+        Z = [[1, 2, 3], [3, 2, 4], [-2, 10, 4]]
+        self.assertEqual(mean(Z), [2, 3, 4])
         self.assertEqual(mean(X), 0)
         self.assertAlmostEqual(mean(Y), 1.5455, 4)
         self.assertAlmostEqual(variance(Y), 20.6727, 4)

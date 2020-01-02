@@ -7,12 +7,17 @@ def linear_regression(X, Y):
 	return Y_pred
 
 def beta(X, Y):
-	return cov(X, Y)/(variance(X))
+	beta = []
+	for i in range(0, size(X[i][:])):
+		beta.append(cov(X[i][:], Y)/(variance(X[i][:])))
+	return beta
+
 def alpha(X, Y):
 	return mean(Y) - beta(X, Y)*mean(X)
 
 def mean(Z):
-	return sum(Z)/len(Z)
+	mu_z = [sum(Z[col][:])/len(Z[col]) for col in Z]
+	return mu_z
 
 def std(Z):
 	import math
